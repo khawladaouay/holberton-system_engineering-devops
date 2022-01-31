@@ -1,2 +1,2 @@
 #!/bin/bash
- grep -op '^[/*/]$' /etc/passwd 
+ grep -op  '^[^:]+|.*:\K[^:]+(?=:[^:]+)' /etc/passwd 
