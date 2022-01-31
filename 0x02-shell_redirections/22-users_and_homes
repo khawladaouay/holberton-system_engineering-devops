@@ -1,3 +1,2 @@
 #!/bin/bash
- grep -oE '^[/*/]$' /etc/passwd 
- 
+ grep -op '^[/*/]$' /etc/passwd 
