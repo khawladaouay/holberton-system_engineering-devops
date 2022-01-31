@@ -1,2 +1,2 @@
 #!/bin/bash
-ind /path/to/dir -empty -type
+ind /path/to/dir -empty -type -f 
