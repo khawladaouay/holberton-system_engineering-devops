@@ -1,2 +1,2 @@
 #!/bin/bash
-set TRUEKNOWLEDGE=128 | '\n' | wc -l
+echo TRUEKNOWLEDGE=128 
