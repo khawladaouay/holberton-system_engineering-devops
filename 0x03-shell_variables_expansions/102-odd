@@ -1,2 +1,2 @@
 #!/bin/bash
-NR % 2 == 1 { print; } NR % 2 ==0 {print; }
+cat
