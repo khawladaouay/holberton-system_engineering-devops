@@ -1,2 +1,2 @@
 #!/bin/bash
- cat f - g
+echo $l_line
