@@ -1,2 +1,2 @@
 #!/bin/bash
-export myvar="Test"
+export BEST="School"
