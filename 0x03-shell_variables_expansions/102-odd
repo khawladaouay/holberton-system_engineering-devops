@@ -1,2 +1,2 @@
 #!/bin/bash
-cat - |grep "something"|while read l_line
+paste - - | cut -f1
