@@ -1,2 +1,2 @@
 #!/bin/bash
-$ perl -e "printf('%.2f', $N/100)"
+printf "%2.2f\n"
