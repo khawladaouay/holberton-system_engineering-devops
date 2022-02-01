@@ -1,2 +1,2 @@
 #!/bin/bash
-| grep -oE '[01]+' | awk '{print "ibase=2;obase=BINARY;"$1}' | bc
+echo "$((2#BINARY))"
