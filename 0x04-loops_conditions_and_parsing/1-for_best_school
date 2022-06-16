@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# is a script that run and repeat 10 times of the string in echo
-for i in {0..9}; do
-	echo "Best School"
+# Bash script that displays Best School 10 times.
+for _ in {0..9}; do
+    echo "Best School"
 done
