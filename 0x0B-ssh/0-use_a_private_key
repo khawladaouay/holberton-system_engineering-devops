@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-ssh -vvv -i ~/.shh/school ubunto@54.91.126.79
+# ses ssh to connect to your server using the private key ~/.ssh/school
+ssh -vvv -i ~/.shh/school ubuntu@54.91.126.79
