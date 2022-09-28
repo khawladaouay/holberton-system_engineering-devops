@@ -8,12 +8,13 @@ def top_ten(subreddit):
         the first 10 hot posts listed for a given subreddit."""
     if not subreddit:
         print('None')
-    url = 'https://www.reddit.com/r/{}/about.json'.format(subreddit)
-    req = requests.get("{}".format(url), headers={
+    url = "https://www.reddit.com"
+    endpoint = f"/r/{subreddit}/hot.json?limit=10"
+    request = requests.get(f"{url}{endpoint}", headers={
         'User-agent': 'Mozilla/5.0'}, allow_redirects=False)
-    if req.status_code == 200:
-        for i in req.json().get('data').get('children'):
-            if i.get('data').get('title'):
-                print(i.get('data').get('title'))
+    if request.status_code == 200:
+        for elem in request.json().get('data').get('children'):
+            if elem.get('data').get('title'):
+                print(elem.get('data').get('title'))
     else:
         print('None')
