@@ -1,0 +1,41 @@
+##
+# config
+##
+server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+        error_page 404 /m404.html;
+        location = /404.html {
+                internal;
+        }
+        location /airbnb-onepage/ {
+                include proxy_params;
+                proxy_intercept_errors on;
+                proxy_pass http://0.0.0.0:5000/airbnb-onepage/;
+        }
+        location ~ /airbnb-dynamic/number_odd_or_even/(\d+)$ {
+                proxy_intercept_errors on;
+                proxy_pass http://0.0.0.0:5001/number_odd_or_even/$1;
+        }
+        location /api/ {
+                include proxy_params;
+                proxy_pass http://0.0.0.0:5002/api/;
+        }
+        location / {
+                include proxy_params;
+                proxy_intercept_errors on;
+                proxy_pass http://127.0.0.1:5003/2-hbnb;
+        }
+        location /static {
+                proxy_intercept_errors on;
+                include proxy_params;
+                proxy_pass http://127.0.0.1:5003;
+        }
+        location /hbnb_static/ {
+                alias /data/web_static/current/;
+        }
+        location /redirect_me {
+                rewrite ^ https://www.youtube.com/watch?v=Fy1QRXplvDE permanent;
+        }
+        add_header X-Served-By 4290-web-01;
+}
